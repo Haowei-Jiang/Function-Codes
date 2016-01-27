@@ -1,0 +1,27 @@
+%This code is based on MATLAB
+
+function [ pmf ] = uniformPMF (X, a, b)
+% uniformPMF Calculate a discrete uniform PMF on [a,b]
+% [ pmf ] = uniformPMF (X,a,b) returns an array of values of the
+% uniform probability density function on the interval [a,b]
+% evaluated at the values in X.
+% %
+%Inputs :
+% X: Integer values where uniform PMF is evaluated
+% a: Integer start of interval with a >= X(1)
+% b: Integer start of interval with a < b <= X(end)
+% %
+%Outputs :
+% pmf : pmf (k) = 1/(b-a+1) , if a <= X(k) <= b;
+% pmf (k) = 0 otherwise
+% Loop through the indices of the vector X
+
+for k = 1: length (X)
+    % X(i) is the ith element of the vector X
+    if a <= X(k) && X(k) <= b
+        pmf (k) = 1/(b-a+1);
+    else
+        pmf (k) = 0;
+    end
+end
+end
