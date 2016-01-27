@@ -1,0 +1,18 @@
+%This code is based on MATLAB
+
+function [ pmf ] = geometryPMF (p, kmax)
+% geometricPMF Calculate a discrete geometric PMF with parameters p & n
+% [ pmf ] = geometricPMF (X,a,b) returns an array of values of the
+% binomial probability density function 
+
+%Inputs :
+% p: probability
+% kmax: scalar quantities
+
+%Outputs :
+% pmf : pmf = (1 ? p)^(k?1)*p, k = 1, 2, . . . , kmax.
+
+for k = 1:kmax
+    pmf(k) = (1-p).^(k-1).*p;
+end
+end
