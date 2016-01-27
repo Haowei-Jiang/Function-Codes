@@ -1,0 +1,18 @@
+%This code is based on MATLAB
+
+function [ pmf ] = c (p, n)
+% binomialPMF Calculate a discrete binomial PMF with parameters p & n
+% [ pmf ] = binomialPMF (X,a,b) returns an array of values of the
+% binomial probability density function 
+
+%Inputs :
+% p: probability
+% n: scalar quantities
+
+%Outputs :
+% pmf : pmf (k) = (n k)*p^k*(1 - p)^(n - k);
+
+for k = 0:n
+    pmf(k+1) = (factorial(n)./(factorial(k).*factorial(n-k))).*p.^(k).*(1-p).^(n-k);
+end
+end
